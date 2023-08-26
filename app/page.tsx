@@ -4,6 +4,7 @@ import SearchBar from "@/components/SearchBar"
 import { fetchCars } from "@/utils"
 import CarCard from "@/components/CarCard"
 import { HomeProps } from "@/types";
+import { fuels, yearsOfProduction } from "@/constants"
 
 export default async function Home({ searchParams }: HomeProps) {
 
@@ -31,9 +32,11 @@ export default async function Home({ searchParams }: HomeProps) {
           <SearchBar />
           <div className="flex justify-start flex-wrap items-center gap-2">
             <CustomFilter
+              options={fuels}
               title="fuel"
             />
             <CustomFilter
+              options={yearsOfProduction}
               title="year"
             />
           </div>
